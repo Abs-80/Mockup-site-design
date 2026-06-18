@@ -99,7 +99,7 @@ export default function FaithNavigator() {
     {
       id: "init",
       role: "model",
-      text: "Peace be with you! I am your Koinonia Faith Guide. Ask me anything about Christianity, Scripture history, or how Jesus brings us together in fellowship. What is on your heart today?"
+      text: "Peace be with you! I am your Hollow & Found Faith Guide. Ask me anything about Christianity, Scripture history, or how Jesus brings us together in fellowship. What is on your heart today?"
     }
   ]);
   const [userInput, setUserInput] = useState<string>("");

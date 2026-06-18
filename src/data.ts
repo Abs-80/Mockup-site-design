@@ -42,7 +42,7 @@ export const SHIRT_COLORS: ShirtColor[] = [
 export const INITIATIVES: Initiative[] = [
   {
     id: "learn",
-    title: "The Koinonia Academy",
+    title: "The Hollow & Found Academy",
     tagline: "Unlocking scripture history & classic Christian theology.",
     iconName: "BookOpen",
     metric: "450k+",
@@ -54,14 +54,14 @@ export const INITIATIVES: Initiative[] = [
   },
   {
     id: "gather",
-    title: "Koinonia Tables",
+    title: "Hollow & Found Tables",
     tagline: "Connecting seekers and rebuilding local fellowship.",
     iconName: "Users",
     metric: "1,200+",
     metricLabel: "Active Small Groups",
     badge: "Bringing People Together",
     shortDesc: "Providing small micro-grants, study guides, and location finders to help Christians open their homes for breaking bread and studying scripture together.",
-    longDesc: "In a digital-first world, deep personal fellowship is diminishing. 'Koinonia Tables' provides starter kits—including discussion cards, food subsidies, and an encrypted group finder—to encourage Christians to launch weekly house dinners. We gather seekers and disciples in organic community settings to grow in love.",
+    longDesc: "In a digital-first world, deep personal fellowship is diminishing. 'Hollow & Found Tables' provides starter kits—including discussion cards, food subsidies, and an encrypted group finder—to encourage Christians to launch weekly house dinners. We gather seekers and disciples in organic community settings to grow in love.",
     actionLabel: "Explore Groups Directory"
   },
   {
@@ -120,7 +120,7 @@ export const INITIAL_PRAYERS: PrayerRequest[] = [
 export const GATHERING_EVENTS: GatheringEvent[] = [
   {
     id: "e1",
-    title: "Summer Solstice Koinonia Table",
+    title: "Summer Solstice Hollow & Found Table",
     organizer: "Pastor Benjamin Wright",
     date: "Thursday, June 25, 2026",
     time: "6:30 PM",

@@ -49,10 +49,10 @@ export default function Header({
               </svg>
             </div>
             <div>
-              <h1 className="font-display font-semibold tracking-wider text-lg text-brand-charcoal uppercase">
-                KOINONIA
+              <h1 className="font-serif font-bold tracking-wider text-sm sm:text-base text-brand-charcoal uppercase">
+                Hollow & Found
               </h1>
-              <p className="font-mono text-[10px] tracking-widest text-[#6B665E] uppercase -mt-1 font-medium">
+              <p className="font-mono text-[9px] tracking-widest text-[#6B665E] uppercase -mt-0.5 font-medium">
                 Sowers Fellowship
               </p>
             </div>

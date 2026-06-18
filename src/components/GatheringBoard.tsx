@@ -32,7 +32,7 @@ export default function GatheringBoard() {
     e.preventDefault();
     if (!hostName || !hostCity || !hostState || !hostEmail) return;
 
-    setSuccessHostMessage(`Outstanding news, ${hostName}! Your 'Koinonia Table' proposal has been filed. We are mailing your physical Fellowship dinner guide and micro-grant applications pack in 3 business days!`);
+    setSuccessHostMessage(`Outstanding news, ${hostName}! Your 'Hollow & Found Table' proposal has been filed. We are mailing your physical Fellowship dinner guide and micro-grant applications pack in 3 business days!`);
     
     // Clear inputs
     setHostName("");
@@ -71,7 +71,7 @@ export default function GatheringBoard() {
               Bringing People Together
             </span>
             <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-brand-charcoal mt-2">
-              Koinonia Table Gatherings
+              Hollow & Found Table Gatherings
             </h2>
           </div>
           <div className="lg:col-span-4">
@@ -122,7 +122,7 @@ export default function GatheringBoard() {
         {showHostForm && (
           <div className="mb-12 bg-white border border-[#E5E1D8] rounded-3xl p-6 md:p-8 animate-fade-in relative z-10 shadow-sm max-w-3xl mx-auto">
             <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-2">
-              Establish a Local Koinonia Table
+              Establish a Local Hollow & Found Table
             </h3>
             <p className="font-sans text-xs text-brand-taupe leading-relaxed mb-6">
               When you establish a table, we provide a $150 startup micro-grant for food support, send weekly scripture discussion pamphlets, and list your group (publicly or privately) so local seekers can find refuge.

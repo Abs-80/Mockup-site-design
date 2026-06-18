@@ -162,7 +162,7 @@ export default function CheckoutModal({
                         {/* Text descriptions */}
                         <div className="flex-1 min-w-0">
                           <h4 className="font-serif text-sm font-bold text-brand-charcoal truncate">
-                            Koinonia Fellowship Shirt
+                            Hollow & Found T-Shirt
                           </h4>
                           <span className="font-mono text-[10px] text-brand-taupe uppercase block">
                             Size {item.size} • {item.colorName}
@@ -210,7 +210,7 @@ export default function CheckoutModal({
                           <span>Sow an Extra Gift</span>
                         </h4>
                         <p className="font-sans text-[11px] text-brand-taupe mt-1 pr-4 leading-relaxed">
-                          By augmenting your order, 100% of these custom parameters goes directly to Koinonia events and commentaries.
+                          By augmenting your order, 100% of these custom parameters goes directly to Hollow & Found events and commentaries.
                         </p>
                       </div>
                       <span className="text-right font-mono text-xs text-brand-forest font-bold">100% Tax Deduct</span>
@@ -432,7 +432,7 @@ export default function CheckoutModal({
 
                 <div className="text-center space-y-1">
                   <span className="font-serif text-xs text-brand-forest tracking-widest uppercase block font-bold">
-                    Koinonia Fellowship
+                    Hollow & Found Fellowship
                   </span>
                   <span className="font-sans text-[9px] text-[#FAF9F6]/60 uppercase tracking-widest font-mono">
                     Official Sowers Covenant Seal
@@ -461,7 +461,7 @@ export default function CheckoutModal({
                 <div className="bg-white/5 p-3 rounded-xl border border-white/5 flex items-center space-x-2.5 text-[10px] text-[#FAF9F6]/70">
                   <Mail className="w-4 h-4 text-brand-forest flex-shrink-0" />
                   <span>
-                    <strong>Your Package:</strong> Includes {cartItems.reduce((s, it) => s + it.quantity, 0)} Koinonia T-Shirt{cartItems.reduce((s, it) => s + it.quantity, 0) > 1 ? 's' : ''} + digital Commentary access key.
+                    <strong>Your Package:</strong> Includes {cartItems.reduce((s, it) => s + it.quantity, 0)} Hollow & Found T-Shirt{cartItems.reduce((s, it) => s + it.quantity, 0) > 1 ? 's' : ''} + digital Commentary access key.
                   </span>
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function CheckoutModal({
             {cartItems.length > 0 && (
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between text-[#6B665E]">
-                  <span>Koinonia Apparel Subtotal:</span>
+                  <span>Hollow & Found Apparel Subtotal:</span>
                   <span className="font-mono text-brand-charcoal font-semibold">${shirtSubtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-[#6B665E]">

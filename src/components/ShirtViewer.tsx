@@ -46,10 +46,10 @@ export default function ShirtViewer({ onAddToCart }: ShirtViewerProps) {
             Fundraising Apparel Campaign
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight text-brand-charcoal mt-2">
-            The Koinonia Fellowship Shirt
+            The Hollow & Found Fellowship T-Shirt
           </h2>
           <p className="font-sans text-brand-taupe text-base md:text-lg mt-4 leading-relaxed font-light">
-            Every shirt is woven from heavy-density undyed organic cotton. 100% of the financial profits directly subsidize Koinonia Table micro-grants, theology learning curricula, and critical Sower homeless relief efforts.
+            Every shirt is woven from heavy-density undyed organic cotton. 100% of the financial profits directly subsidize Hollow & Found table micro-grants, theology learning curricula, and critical Sower homeless relief efforts.
           </p>
         </div>
 
@@ -89,8 +89,8 @@ export default function ShirtViewer({ onAddToCart }: ShirtViewerProps) {
                   {activePhotoView === "front" && (
                     <g className="animate-fade-in">
                       {/* Elegant center chest script print */}
-                      <text x="50" y="42" fill={selectedColor.id === 'cream' ? '#2d2a26' : '#fcfbfa'} fontSize="3.8" fontFamily="sans-serif" textAnchor="middle" letterSpacing="2.5" fontWeight="bold">
-                        KOINONIA
+                      <text x="50" y="42" fill={selectedColor.id === 'cream' ? '#2d2a26' : '#fcfbfa'} fontSize="2.8" fontFamily="sans-serif" textAnchor="middle" letterSpacing="1.2" fontWeight="bold">
+                        HOLLOW & FOUND
                       </text>
                       {/* Sleek thin aesthetic cross */}
                       <line x1="50" y1="46" x2="50" y2="55" stroke={selectedColor.id === 'cream' ? '#4A5D4E' : '#E5E1D8'} strokeWidth="0.6" />
@@ -196,7 +196,7 @@ export default function ShirtViewer({ onAddToCart }: ShirtViewerProps) {
                 Proceeds Support 3 Initiatives
               </span>
               <h3 className="font-serif text-2.5xl font-bold tracking-tight text-brand-charcoal mt-2">
-                "Koinonia Gather" Sower Fleece & T-Shirt
+                "Hollow & Found" Sower Fleece & T-Shirt
               </h3>
               
               <div className="flex items-center space-x-3 mt-1 select-none">
@@ -362,7 +362,7 @@ export default function ShirtViewer({ onAddToCart }: ShirtViewerProps) {
 
             {/* Campaign disclosure statement */}
             <p className="font-sans text-[11px] text-brand-charcoal/50 leading-relaxed border-t border-brand-clay/40 pt-4">
-              <strong>Charitable Statement:</strong> 4250 Sowers Foundation is an ecumenical Christian non-profit organization registered under section 501(c)(3). In compliance with charity guidelines, $17.00 of your $35.00 purchase of the Koinonia T-Shirt qualifies as an immediate tax-deductible donation. Digital receipts issued promptly.
+              <strong>Charitable Statement:</strong> 4250 Sowers Foundation is an ecumenical Christian non-profit organization registered under section 501(c)(3). In compliance with charity guidelines, $17.00 of your $35.00 purchase of the Hollow & Found T-Shirt qualifies as an immediate tax-deductible donation. Digital receipts issued promptly.
             </p>
           </div>
 

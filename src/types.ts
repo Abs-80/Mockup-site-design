@@ -1,5 +1,5 @@
 /**
- * Types and interfaces for the Koinonia Gather app.
+ * Types and interfaces for the Hollow and Found app.
  */
 
 export interface ShirtColor {

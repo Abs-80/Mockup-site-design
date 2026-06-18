@@ -256,7 +256,7 @@ export default function App() {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold tracking-wider text-sm uppercase text-brand-cream">
-                    KOINONIA GATHER
+                    HOLLOW & FOUND
                   </h4>
                   <p className="font-mono text-[9px] uppercase tracking-widest text-brand-gold -mt-0.5 font-semibold">
                     The Sowers Project
@@ -288,7 +288,7 @@ export default function App() {
               <h5 className="font-mono text-xs font-bold uppercase tracking-widest text-[#efebe4]/50">Sower Secretariat</h5>
               <div className="space-y-2 text-xs text-[#efebe4]/75 font-light">
                 <p><strong>Agape Headquarters:</strong> Minneapolis Outreach Warehouse Facility, 425 W Sowers Blvd, Suite 200, Minneapolis, MN 55401</p>
-                <p><strong>Secretariat Mailbox:</strong> secretariat@koinoniagather.org</p>
+                <p><strong>Secretariat Mailbox:</strong> contact@hollowandfound.org</p>
                 <p><strong>Intercessors Helpline:</strong> 1-800-425-SOWS (7697)</p>
               </div>
             </div>
@@ -296,7 +296,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-[#efebe4]/40 font-mono select-none">
-            <p>© 2026 Koinonia Gather & Sowers Foundation. All Rights Reserved. 501(c)(3) Entity.</p>
+            <p>© 2026 Hollow & Found & Sowers Foundation. All Rights Reserved. 501(c)(3) Entity.</p>
             <div className="flex space-x-4">
               <span className="hover:text-brand-gold select-none">Doctrine Statement</span>
               <span className="hover:text-brand-gold select-none">Tax Credentials</span>
