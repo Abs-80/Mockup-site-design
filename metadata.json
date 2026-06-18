@@ -1,0 +1,6 @@
+{
+  "name": "Koinonia Gather",
+  "description": "A premium apparel fundraising showcase supporting digital ministry, community gatherings, and grace-focused educational outreach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
