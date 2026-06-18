@@ -2,6 +2,88 @@ import React, { useState, useEffect, useRef } from "react";
 import { ChatMessage, ScriptureResponse } from "../types";
 import { Book, HelpCircle, Send, Sparkles, Smile, Shield, Compass, ChevronRight } from "lucide-react";
 
+// Client-side local scripture fallbacks for offline static environments (e.g. GitHub Pages)
+const CLIENT_SCRIPTURE_FALLBACKS: Record<string, ScriptureResponse> = {
+  Community: {
+    verse: "And let us consider how we may spur one another on toward love and good deeds, not giving up meeting together, as some are in the habit of doing, but encouraging one another.",
+    reference: "Hebrews 10:24-25",
+    reflection: "True Christian discipleship is never private. We exist in a beautiful tapestry where iron sharpens iron, and checking in on each other cultivates a community of grace."
+  },
+  Peace: {
+    verse: "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you. Let not your hearts be troubled, neither let them be afraid.",
+    reference: "John 14:27",
+    reflection: "The peace that Christ provides transcends circumstantial calm. It is solid, anchor-like assurance founded in His enduring presence."
+  },
+  Anxiety: {
+    verse: "Cast all your anxiety on him because he cares for you.",
+    reference: "1 Peter 5:7",
+    reflection: "God does not ask us to carry our burdens in silence. He actively invites us to cast them on Him, knowing that His shoulders are infinite and His heart is full of absolute care."
+  },
+  Joy: {
+    verse: "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
+    reference: "Romans 15:13",
+    reflection: "Discipleship joy is a deep-well fruit of the Spirit, independent of standard worldly happiness. It flows from a sustained connection to the vine of hope."
+  },
+  Service: {
+    verse: "And over all these virtues put on love, which binds them all together in perfect unity.",
+    reference: "Colossians 3:14",
+    reflection: "Love is the ultimate fabric of Koinonia. It knits disparate hearts, diverse minds, and scattered communities into a singular reflection of God's covenant grace."
+  }
+};
+
+// Client-side intelligent Christian theology responder for offline static environments
+const getOfflineChatResponse = (text: string): string => {
+  const lower = text.toLowerCase();
+  
+  if (lower.includes("koinonia") || lower.includes("mean") || lower.includes("greek")) {
+    return `The word **Koinonia** is a beautiful Greek term found in the New Testament (such as in **Acts 2:42**). It is often translated as "fellowship," "communion," "deep community," or "joint participation."
+    
+In the early Christian church, Koinonia wasn't just casual social gathering. It described a profound spiritual and practical union where believers shared their lives, served together, broke bread, and carried one another's burdens as one body in Christ. It means that we are linked not by superficial interests, but by the love and grace of Jesus Christ.`;
+  }
+  
+  if (lower.includes("agape") || lower.includes("love") || lower.includes("define")) {
+    return `In the New Testament, **Agape** is the highest form of love—often described as unconditional, sacrificial, and divine love. 
+
+Unlike feelings-based affection, Agape is an act of the will. It is best defined in **John 15:13**: "Greater love has no one than this: to lay down one's life for one's friends." This is the love God has shown us in Jesus, and it is the exact blueprint for our relationships in community: putting others' needs before our own and loving without expecting anything in return.`;
+  }
+  
+  if (lower.includes("act") || lower.includes("early") || lower.includes("communit")) {
+    return `The early Christian community described in **Acts 2:42-47** is the supreme template for Koinonia:
+
+"They devoted themselves to the apostles’ teaching and to fellowship, to the breaking of bread and to prayer." 
+
+They had everything in common, sold their possessions to give to anyone in need, met daily in the temple courts, and broke bread together in their homes with glad and sincere hearts. It represents an integrated life where spiritual devotion and practical community care combined seamlessly.`;
+  }
+  
+  if (lower.includes("grace") || lower.includes("testament")) {
+    return `**Grace** (from the Greek *Charis*) is the heart of the Christian gospel. It is defined as the unmerited, active house favor and love of God. 
+
+As **Ephesians 2:8-9** explains: "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God." Grace means we do not have to purchase, earn, or struggle to deserve God's love. It is a gift freely given to restore us and empower us to live in love and service to others.`;
+  }
+
+  if (lower.includes("jesus") || lower.includes("christ")) {
+    return `At the center of Christian faith is **Jesus Christ**, whom we recognize as the Son of God and Savior of the world. 
+
+Jesus' life, teaching, death, and resurrection demonstrate God's profound desire to be reconciled in fellowship with humanity. His path was one of deep humility, absolute truth, and radical hospitality—inviting the outcast, the seeker, and the hurting to experience Koinonia at a common table.`;
+  }
+
+  if (lower.includes("faith") || lower.includes("doubts") || lower.includes("skeptic")) {
+    return `Faith is a journey of trust and relationship, not of mathematical absolute certainty. Having deep doubts or questions is a completely natural, healthy part of seeking truth in Christ.
+
+The early disciples asked many hard questions of Jesus, and He consistently responded with grace, patience, and encouragement. In Christian fellowship, we want to walk with each other through our questions, holding fast to the belief that God's grace is larger than our capacity to fully articulate or understand it.`;
+  }
+
+  return `Thank you for asking: "${text}". 
+
+Currently, our Digital Faith Center is operating in **Offline Static Mode (GitHub Pages Optimized)**.
+
+Even in static mode, we are standing with you in fellowship! In orthodox Christian faith, we find that the deepest truths are discovered through Scripture read in communion. 
+
+To help guide your contemplation, consider meditating on **1 Thessalonians 5:11**: *"Therefore encourage one another and build each other up, just as in fact you are doing."* 
+
+If you have a personal matter on your heart, please pin a message to our **Digital Prayer Wall** below so other members of our worldwide family can join in intercession for you!`;
+};
+
 export default function FaithNavigator() {
   // Scripture states
   const [selectedCategory, setSelectedCategory] = useState<string>("Community");
@@ -44,9 +126,13 @@ export default function FaithNavigator() {
       if (res.ok) {
         const data = await res.json();
         if (data.verse) setScripture(data);
+      } else {
+        throw new Error("Local scripture server check bypass");
       }
     } catch (err) {
-      console.error("Error fetching scripture:", err);
+      console.warn("Utilizing static client scripture fallback table for category:", cat, err);
+      const fallback = CLIENT_SCRIPTURE_FALLBACKS[cat] || CLIENT_SCRIPTURE_FALLBACKS.Community;
+      setScripture(fallback);
     } finally {
       setLoadingScripture(false);
     }
@@ -92,17 +178,18 @@ export default function FaithNavigator() {
         };
         setChatMessages((prev) => [...prev, modelMsg]);
       } else {
-        throw new Error("API failure");
+        throw new Error("Local AI server link bypass");
       }
     } catch (err) {
-      console.error("Error in AI Q&A:", err);
-      // Fallback message
+      console.warn("Express backend API offline of unavailable. Executing client-side static theological fallback context.", err);
+      // Beautiful offline guided response simulation for GitHub Pages/Static deployment
+      const reply = getOfflineChatResponse(textToSend);
       setChatMessages((prev) => [
         ...prev,
         {
-          id: "m-err-" + Date.now(),
+          id: "m-off-" + Date.now(),
           role: "model",
-          text: "I want to apologize—there was an error contacting the theological servers. Let's reflect on the peace of Christ. Feel free to try submitting your question again."
+          text: reply
         }
       ]);
     } finally {
